@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>Этот</li>
+    <li>тест</li>
+</ul>
+<ul>
+    <li>полностью</li>
+    <li>пройден</li>
+</ul>
+
+<script>
+    let element = document.querySelectorAll('ul > li:last-child');
+    for (let key of element) {
+        console.log(key.innerHTML)
+    }
+</script>
+</body>
+</html>

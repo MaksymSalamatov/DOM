@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        table, th, td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<table id="table">
+    <tr>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Возраст</th>
+    </tr>
+    <tr>
+        <td>John</td>
+        <td>Smith</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>Pete</td>
+        <td>Brown</td>
+        <td>15</td>
+    </tr>
+    <tr>
+        <td>Ann</td>
+        <td>Lee</td>
+        <td>5</td>
+    </tr>
+</table>
+
+<script>
+    let table = document.querySelectorAll('table'),
+        firstChild = document.querySelectorAll('tr'),
+        arr = [];
+
+    firstChild.forEach(item => {
+        let td = item.querySelector('td');
+        if(td !== null) {
+            let elem = td.innerHTML;
+
+            arr.push(elem);
+        }
+    })
+    arr.filter(i => {
+        return i.length >= 5;
+    });
+    console.log(arr)
+</script>
+</body>
+</html>

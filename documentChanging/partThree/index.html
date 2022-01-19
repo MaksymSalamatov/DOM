@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+
+<!-- клик по этой кнопке вызовет clockStart() -->
+<input type="button" onclick="clockStart()" value="Старт">
+
+<!-- клик по этой кнопке вызовет clockStop() -->
+<input type="button" onclick="clockStop()" value="Стоп" id="stop">
+
+
+
+<script>
+
+    let clock = document.createElement('div');
+    clock.classList.add('clock');
+
+    function start(){
+            let date = new Date(),
+                hours = (date.getHours() < 10) ? '0' + date.getHours() : date.getHours(),
+                minutes = (date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes(),
+                seconds = (date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds(),
+                stop = document.querySelector('#stop');
+
+
+            stop.after(clock);
+
+            clock.innerHTML = `${hours}:${minutes}:${seconds} ` ;
+    }
+
+    let startTime;
+
+     function clockStart(){
+         startTime = setInterval(start, 1000);
+         start();
+    }
+
+    function clockStop(){
+        clearInterval(startTime);
+    }
+</script>
+</body>
+</html>
