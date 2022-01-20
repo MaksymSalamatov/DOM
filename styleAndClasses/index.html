@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .notification{
+            position: absolute;
+            border: 1px solid darkolivegreen;
+        }
+    </style>
+</head>
+<body>
+
+
+<script>
+    let elem;
+    function showNotification(options) {
+        elem = document.createElement('div');
+        elem.classList.add('notification');
+        elem.style.top = options.top + 'px';
+        elem.style.right = options.right + 'px';
+        elem.innerHTML = options.html;
+        elem.classList.add(options.className);
+        document.body.append(elem);
+    }
+
+    showNotification({
+        top: 10,
+        right: 10,
+        html: "Hello!",
+        className: "welcome"
+    });
+
+    setTimeout(() => {
+        elem.style.display = 'none'
+    }, 1500);
+
+
+</script>
+</body>
+</html>
