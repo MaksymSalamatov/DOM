@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #field {
+            width: 200px;
+            border: 10px groove black;
+            background-color: #00FF00;
+            position: relative;
+        }
+
+        #ball {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+<div id="field">
+    <img src="https://en.js.cx/clipart/ball.svg" id="ball"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+</div>
+
+<script>
+    let foo = s => document.querySelector(s),
+        field = foo('#field'),
+        ball = foo('#ball'),
+        ballStyles = getComputedStyle(ball),
+        ballWidth = parseInt(ballStyles.width) / 2,
+        ballHeight = parseInt(ballStyles.width) / 2,
+        middleFieldX = field.clientWidth/2,
+        middleFieldY = field.clientHeight/2;
+
+    field.addEventListener('click', () => {
+        ball.style.top = middleFieldY - ballWidth  + 'px';
+        ball.style.left = middleFieldX - ballHeight + 'px';
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .content {
+            margin: 200px 0 0 200px;
+            height: 200px;
+            width: 200px;
+            overflow-y: scroll;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci at cumque dolore ducimus earum eos esse et fugit natus nostrum, perspiciatis quae quisquam ratione repudiandae saepe ut vitae. Temporibus.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci at cumque dolore ducimus earum eos esse et fugit natus nostrum, perspiciatis quae quisquam ratione repudiandae saepe ut vitae. Temporibus.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci at cumque dolore ducimus earum eos esse et fugit natus nostrum, perspiciatis quae quisquam ratione repudiandae saepe ut vitae. Temporibus.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci at cumque dolore ducimus earum eos esse et fugit natus nostrum, perspiciatis quae quisquam ratione repudiandae saepe ut vitae. Temporibus.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci at cumque dolore ducimus earum eos esse et fugit natus nostrum, perspiciatis quae quisquam ratione repudiandae saepe ut vitae. Temporibus.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci at cumque dolore ducimus earum eos esse et fugit natus nostrum, perspiciatis quae quisquam ratione repudiandae saepe ut vitae. Temporibus.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci at cumque dolore ducimus earum eos esse et fugit natus nostrum, perspiciatis quae quisquam ratione repudiandae saepe ut vitae. Temporibus.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci at cumque dolore ducimus earum eos esse et fugit natus nostrum, perspiciatis quae quisquam ratione repudiandae saepe ut vitae. Temporibus.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci at cumque dolore ducimus earum eos esse et fugit natus nostrum, perspiciatis quae quisquam ratione repudiandae saepe ut vitae. Temporibus.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci at cumque dolore ducimus earum eos esse et fugit natus nostrum, perspiciatis quae quisquam ratione repudiandae saepe ut vitae. Temporibus.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci at cumque dolore ducimus earum eos esse et fugit natus nostrum, perspiciatis quae quisquam ratione repudiandae saepe ut vitae. Temporibus.
+</div>
+
+<script>
+    let foo = s => document.querySelector(s),
+        elem = foo('.content');
+
+    let bottomScroll = elem.scrollHeight - elem.scrollTop - elem.clientHeight;
+    elem.addEventListener('click', () => {
+        console.log(elem.scrollTop);
+    })
+</script>
+</body>
+</html>
