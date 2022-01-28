@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="content">
+  <button class="title" data-click value="1">click</button>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius exercitationem ipsa iure laborum maxime molestiae non officiis qui quibusdam quis sapiente, vel! Accusamus accusantium ea nisi officiis quaerat quas ut.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias doloribus, dolorum harum itaque laudantium magnam nisi, non obcaecati officia rem repellendus voluptates. Aut autem cumque dignissimos enim fugiat, quasi?
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus aperiam assumenda consequatur consequuntur distinctio explicabo facere fugiat harum illo molestiae molestias non odio odit quaerat, quam quas quasi repudiandae.
+  <button data-click  value="2">click2</button>
+</div>
+
+
+<script>
+  let content = document.querySelector('.content');
+
+  content.addEventListener('click', () => {
+    if(event.target.dataset.click !== undefined) {
+      event.target.value++;
+    }
+  })
+</script>
+</body>
+</html>

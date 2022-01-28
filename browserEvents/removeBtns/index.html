@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+    <style>
+        .practiceOne {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="practiceOne">
+    <button id="btn">Button</button>
+    <div id="id">Text</div>
+</div>
+
+<div class="practiceTwo">
+    <button class="btn2">Button 2</button>
+</div>
+
+
+
+<script>
+    let btn = document.querySelector('#btn'),
+        text = document.querySelector('#id'),
+        btn2 = document.querySelector('.btn2');
+
+    btn.addEventListener('click', () => {
+        text.remove();
+    })
+
+    btn2.addEventListener('click', () => {
+        btn2.remove();
+    })
+</script>
+</body>
+</html>

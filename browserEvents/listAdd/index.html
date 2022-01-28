@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .btnRight, .btnDown{
+            color: #3c763d;
+        }
+        .btnDown{
+            display: none;
+        }
+        .btnDown.active{
+            display: inline;
+        }
+        .btnRight{
+            display: inline;
+        }
+        .btnRight.active{
+            display: none;
+        }
+        .clickMe{
+            cursor: pointer;
+        }
+        li{
+            list-style-type: none;
+        }
+        .list{
+            margin: 0;
+            padding: 0;
+            display: none;
+        }
+        .list.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="clickMe"><span class="btnRight btn"> ▶ </span><span class="btnDown btn"> ▼ </span> Click me</div>
+<ul class="list">
+    <li>Пирожное</li>
+    <li>Пончик</li>
+    <li>Мёд</li>
+</ul>
+
+<script>
+    let btnRight = document.querySelector('.btnRight'),
+        btnDown = document.querySelector('.btnDown'),
+        btnMain = document.querySelector('.clickMe'),
+        list = document.querySelector('.list');
+
+    function toggleOn() {
+        btnRight.classList.toggle('active');
+        btnDown.classList.toggle('active');
+        list.classList.toggle('active');
+    }
+
+    btnMain.addEventListener('click', toggleOn);
+
+</script>
+</body>
+</html>
