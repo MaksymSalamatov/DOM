@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+
+<script>
+    function createContainer() {
+        let container = document.createElement('div');
+        container.classList.add('contents');
+        container.innerHTML = `<p>Как насчёт того, чтобы прочитать
+        <a href="https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8">Википедию</a>
+         или посетить <a href="https://www.w3schools.com" class="w3"><i>W3.org</i></a>
+         и узнать о современных стандартах?</p>`
+        container.style.width = 400 + 'px'
+        document.body.prepend(container);
+
+        rejectAction(container)
+    }
+
+    createContainer()
+
+    function rejectAction(elem) {
+        elem.addEventListener('click', (event) => {
+            let conf;
+            if(event.target.nodeName === 'A' || event.target.nodeName === 'I') {
+                conf = confirm('Do you want to leave this page?')
+            }
+             if(conf !== true) {
+                 event.preventDefault();
+             }
+        })
+    }
+
+</script>
+</body>
+</html>

@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .target{
+            color: red;
+        }
+    </style>
 </head>
 <body>
-$END$
+
+<div class="content">
+    <div class="span">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deserunt eveniet, fugiat iusto laborum maiores nam non quod tenetur totam! Accusamus doloremque dolores eveniet iste iure non quaerat tenetur voluptatem.
+        <span class="target">Deep element</span>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias aliquam aperiam asperiores assumenda blanditiis commodi cupiditate expedita impedit modi natus nihil pariatur quia quibusdam soluta sunt temporibus tenetur, vero?
+    </div>
+</div>
+
+
+<script>
+    let content = document.querySelector('.content'),
+        span = document.querySelector('.span'),
+        target = document.querySelector('.target');
+
+    function onclickElem() {
+        console.log(1)
+    }
+
+    target.addEventListener('click', onclickElem, true)
+
+    setTimeout(() => {
+        target.removeEventListener('click', onclickElem, true)
+    }, 2000)
+</script>
 </body>
 </html>

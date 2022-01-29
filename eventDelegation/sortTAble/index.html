@@ -1,10 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="utf-8">
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 4px;
+        }
+        th {
+            cursor: pointer;
+        }
+        th:hover {
+            background: yellow;
+        }
+    </style>
 </head>
+
 <body>
-$END$
+
+<table id="grid">
+    <thead>
+    <tr>
+        <th data-type="number">Возраст</th>
+        <th data-type="string">Имя</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>5</td>
+        <td>Вася</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Петя</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>Женя</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>Маша</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Илья</td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+    let tBody = document.querySelector('#grid');
+
+    tBody.addEventListener('click', (event) => {
+        if(event.target.tagName !== 'TH') return;
+
+        let th = event.target;
+
+        sortGreed(th.cellIndex, th.dataset.type)
+    })
+
+    function sortGreed(collNum, type) {
+        let tableBody = tBody.querySelector('tbody');
+        let rowsArray = Array.from(tableBody.rows);
+
+        let compare;
+
+        switch (type) {
+            case 'number':
+                compare = function(rowA, rowB) {
+                    return rowA.cells[collNum].innerHTML - rowB.cells[collNum].innerHTML;
+                };
+                break;
+            case 'string':
+                compare = function (rowA, rowB) {
+                    return rowA.cells[collNum].innerHTML > rowB.cells[collNum].innerHTML ? 1: -1;
+                }
+                break;
+        }
+        rowsArray.sort(compare);
+
+        tableBody.append(...rowsArray);
+    }
+</script>
+
 </body>
 </html>

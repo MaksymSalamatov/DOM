@@ -1,10 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="utf-8">
+    <style>
+        #tree{
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-$END$
+
+<ul class="tree" id="tree">
+    <li>Животные
+        <ul>
+            <li>Млекопитающие
+                <ul>
+                    <li>Коровы</li>
+                    <li>Ослы</li>
+                    <li>Собаки</li>
+                    <li>Тигры</li>
+                </ul>
+            </li>
+            <li>Другие
+                <ul>
+                    <li>Змеи</li>
+                    <li>Птицы</li>
+                    <li>Ящерицы</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>Рыбы
+        <ul>
+            <li>Аквариумные
+                <ul>
+                    <li>Гуппи</li>
+                    <li>Скалярии</li>
+                </ul>
+            </li>
+            <li>Морские
+                <ul>
+                    <li>Морская форель</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+    let treesLi = document.querySelectorAll('li'),
+        tree = document.querySelector('#tree');
+
+    for(let li of treesLi) {
+        let span = document.createElement('span');
+        li.prepend(span);
+        span.append(span.nextSibling);
+    }
+
+    tree.addEventListener('click', (event) => {
+        if(event.target.tagName !== 'SPAN') return;
+
+        let childUl = event.target.parentNode.querySelector('ul');
+
+        if(!childUl) return;
+
+        childUl.hidden = !childUl.hidden;
+    })
+</script>
 </body>
 </html>

@@ -21,6 +21,10 @@
             background: #fff;
             box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
         }
+
+        .activePrompt{
+            position: absolute;
+        }
     </style>
 </head>
 
@@ -37,11 +41,18 @@
 
 <script>
     let body = document.querySelector('body');
+    let prompt = document.createElement('div');
 
     body.addEventListener('mouseover', (event) => {
         if(event.target.dataset.tooltip) {
-            let 
-            console.log(event.target.dataset.tooltip)
+            prompt.innerText = event.target.dataset.tooltip;
+            body.prepend(prompt);
+        }
+    })
+
+    body.addEventListener('mouseout', (event) => {
+        if(event.target.dataset.tooltip) {
+            prompt.remove()
         }
     })
 </script>
