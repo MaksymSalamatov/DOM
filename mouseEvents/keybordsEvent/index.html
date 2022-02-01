@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Press "A" and "S" together</p>
+
+<script>
+
+    function onKeys(func, ...codes) {
+        let pressed = new Set();
+
+        document.addEventListener('keydown', (event) => {
+            pressed.add(event.code);
+
+            for (let code of codes) {
+                if(!pressed.has(code)) {
+                    return;
+                }
+            }
+
+            pressed.clear();
+
+            func();
+        })
+
+        document.addEventListener('keyup', (event) => {
+            pressed.delete(event.code);
+        })
+    }
+
+    onKeys(
+        () => alert('Hello, how are you?'),
+        'KeyA',
+        'KeyS'
+    )
+</script>
+</body>
+</html>

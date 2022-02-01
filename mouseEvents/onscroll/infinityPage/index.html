@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    function makeScroll() {
+        while(true) {
+            let windowBottom = document.documentElement.getBoundingClientRect().bottom;
+            let pageHeight = document.documentElement.clientHeight;
+
+            if(windowBottom > pageHeight + 100) break;
+
+            document.body.insertAdjacentHTML('beforeend', `<p>Date: ${new Date()}</p>`)
+        }
+    }
+
+    makeScroll()
+    window.addEventListener('scroll', makeScroll);
+</script>
+</body>
+</html>
